@@ -105,7 +105,7 @@ public class Ex13_15 {
 		new Thread(new Customer2(table, "donut"), "CUST1").start();
 		new Thread(new Customer2(table, "burger"), "CUST2").start();
 		
-		Thread.sleep(2*1000);
+		Thread.sleep(3*1000);
 		System.exit(0);
 	}
 
