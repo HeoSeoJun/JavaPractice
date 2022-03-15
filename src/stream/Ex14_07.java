@@ -12,9 +12,10 @@ public class Ex14_07 {
 		);
 		
 //		Stream<Stream<String>> strStrmStrm = strArrStrm.map(Arrays::stream);
+		// 메서드 참조 > 람다식 > 함수형 인터페이스(=추상 메서드가 단 하나인 인터페이스)
 		Stream<String> strStrm = strArrStrm.flatMap(Arrays::stream);
 		
-//		strStrmStrm // java.util.stream.ReferencePipeline$Head@eed1f14 : 하나의 스트림 출력
+//		strStrmStrm // java.util.stream.ReferencePipeline$Head@eed1f14 : 하나의 '스트림'을 출력
 		strStrm
 //			.map(String::toLowerCase) // 소문자로 변환
 //			.distinct() // 중복 제거
