@@ -15,7 +15,8 @@ public class Ex14_09 {
 		
 		Stream.of(strArr)
 			.parallel() // 여러 스레드로 병렬 처리 > 실행마다 처리순서 다름
-			.forEachOrdered(System.out::println);
+			.forEachOrdered(System.out::println); // 순서대로
+//			.forEach(System.out::println);
 		System.out.println();
 		
 		boolean noEmptyStr = Stream.of(strArr)
@@ -23,7 +24,7 @@ public class Ex14_09 {
 //		Optional<String> sWord = Stream.of(strArr)
 //			.filter(s -> s.charAt(0)=='s').findFirst();
 		Optional<String> sWord = Stream.of(strArr).parallel()
-				.filter(s -> s.charAt(0)=='s').findAny();
+			.filter(s -> s.charAt(0)=='s').findAny();
 		
 		System.out.println("noEmptyStr : "+noEmptyStr);
 		System.out.println("sWord : "+sWord.get());

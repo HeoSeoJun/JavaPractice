@@ -64,7 +64,8 @@ public class Ex14_10 {
 		System.out.println("1. 단순분할(성별로 분할)");
 		
 		Map<Boolean, List<Student2>> stuBySex = Stream.of(stuArr)
-				.collect(Collectors.partitioningBy(Student2::isMale)); // Collector의 구현 클래스 'Collectors' 및 static method
+//				.collect(Collectors.partitioningBy(Student2::isMale)); // Collector의 구현 클래스 'Collectors' 및 static method
+				.collect(Collectors.partitioningBy(s -> s.isMale())); // Collector의 구현 클래스 'Collectors' 및 static method
 		
 		List<Student2> maleStudent = stuBySex.get(true);
 		List<Student2> femaleStudent = stuBySex.get(false);
@@ -99,9 +100,9 @@ public class Ex14_10 {
 		System.out.println("여학생 1등 : " + topScoreBySex2.get(false));
 		
 		System.out.printf("%n4. 다중분할(성별 불합격자, 100점 이하)%n");
-		Map<Boolean, Map<Boolean, List<Student2>>> failedStuBySex =
-			Stream.of(stuArr)
-			.collect(Collectors.partitioningBy(Student2::isMale, Collectors.partitioningBy(s -> s.getScore() <= 100)
+		Map<Boolean, Map<Boolean, List<Student2>>> failedStuBySex = Stream.of(stuArr)
+				.collect(Collectors.partitioningBy(Student2::isMale,
+						Collectors.partitioningBy(s -> s.getScore() <= 100)
 			));
 		
 		List<Student2> failedMaleStu = failedStuBySex.get(true).get(true);

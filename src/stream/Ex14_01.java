@@ -17,6 +17,7 @@ public class Ex14_01 {
 		strStream.forEach(System.out::println);
 		System.out.println();
 		
+//		기본형 스트림 for 성능향상
 //		int[] intArr = {1,2,3,4,5};
 //		IntStream intStream = Arrays.stream(intArr);
 //		intStream.forEach(System.out::println);
@@ -25,7 +26,7 @@ public class Ex14_01 {
 		Integer[] intArr = {1,2,3,4,5};
 		Stream<Integer> intStream = Arrays.stream(intArr);
 //		intStream.forEach(System.out::println);
-		System.out.println("count : "+intStream.count());
+		System.out.println("count : " + intStream.count());
 	}
 
 }
