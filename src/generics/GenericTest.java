@@ -2,8 +2,8 @@ package generics;
 
 import java.util.ArrayList;
 
-class Tv {}
-class Audio {}
+class Tv0 {}
+class Audio0 {}
 
 public class GenericTest {
 	public static void main(String[] args) {
